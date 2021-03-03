@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.DragEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -2520,6 +2521,7 @@ public class EditPostActivity extends LocaleAwareActivity implements
         }
     }
 
+
     /**
      * Sets the content of the reblogged post
      */
@@ -2940,6 +2942,11 @@ public class EditPostActivity extends LocaleAwareActivity implements
     /**
      * EditorFragmentListener methods
      */
+
+    @Override
+    public void updateFeaturedImage(final long mediaId, final boolean imagePicked) {
+        mEditPostSettingsFragment.updateFeaturedImage(mediaId, imagePicked);
+    }
 
     @Override
     public void onAddMediaClicked() {
